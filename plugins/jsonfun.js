@@ -28,7 +28,7 @@ module.exports = {listeners: [
 			console.log(body);
 			response = JSON.parse(body)["results"];
 			console.log(response);
-			reply(JSON.stringify(response).replace(/["]/g,'').replace(/[[]/g,"").replace(/[]]/g,"").replace("]","").replace(/[}]/g,"").replace(/[{]/g,"\n"));
+			reply(JSON.stringify(response).replace(/["}{\]\[]/g,"").replace(/[{]/g,"\n"));
 		}
 	})
 	}
